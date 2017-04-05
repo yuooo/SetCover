@@ -17,26 +17,38 @@ they return:
 #    weight = 0
 #
 
+#%% Utils
 inf = float('Inf')
 
+def div(a,b):
+    if b == 0:
+        return inf
+    else:
+        return float(a) / b
 
-def bruteForce():
+#%% Set cover algo
+
+def bruteForce(h_elements, l_sets):
     return []
 
 def greedy(h_elements, l_sets):
     total_weight = 0
+    k = 0
     while h_elements:
+        k+=1
+        print k
         best_ratio = inf
         best_index = 0
 
         # find argmin
         for i_set, sett in enumerate(l_sets):
             weight_set, h_element_in_the_set = sett
-            new_ratio = float(weight_set) / len(h_element_in_the_set)
+            new_ratio = div(weight_set, len(h_element_in_the_set))
             if new_ratio < best_ratio:
                 best_ratio = new_ratio
                 best_index = i_set
         best_weight, best_set = l_sets[best_index]
+        print best_weight, best_set
 
         # Remove best set from the list of possible sets
         del l_sets[best_index]
@@ -50,11 +62,20 @@ def greedy(h_elements, l_sets):
         for sett in l_sets:
             _ , h_set = sett 
             for element_now_covered in best_set:
-                del h_set[element_now_covered]
+                if element_now_covered in h_set:
+                    del h_set[element_now_covered]
+                
     return total_weight
+    
+#%%
  
-
-
+element1 = {'a': 0, 'b': 0, 'c': 0}
+sets1 = [(2, {'a':0}), \
+(10, {'b':0, 'c':0}), \
+(3, {'a':0, 'c':0}), \
+(8, {'b':0}), \
+(8, {'b':0, 'c':0})]
+greedy(element1, sets1)
        
                 
                 
