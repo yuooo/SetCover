@@ -45,7 +45,7 @@ import random
 class Greedy_T(unittest.TestCase):
     
     
-    def test_greedy1(self):
+    def test_usual_greedy1(self):
         element1 = {'a': 0, 'b': 0, 'c': 0}
         sets1 = [(2, {'a':0}), \
         (10, {'b':0, 'c':0}), \
@@ -53,7 +53,7 @@ class Greedy_T(unittest.TestCase):
         (8, {'b':0}), \
         (8, {'b':0, 'c':0})]
         
-        self.assertEqual (11, setcover.greedy(element1, sets1))
+        self.assertEqual (11, setcover.usual_greedy(element1, sets1))
         
 
     

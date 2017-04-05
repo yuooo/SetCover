@@ -30,25 +30,25 @@ def div(a,b):
 
 def bruteForce(h_elements, l_sets):
     return []
+    
+def f_normal_greedy(weight_set, h_element_in_the_set):
+    return div(weight_set, len(h_element_in_the_set))
 
-def greedy(h_elements, l_sets):
+def greedy_skeleton(h_elements, l_sets, f):
     total_weight = 0
-    k = 0
     while h_elements:
-        k+=1
-        print k
         best_ratio = inf
         best_index = 0
 
         # find argmin
         for i_set, sett in enumerate(l_sets):
             weight_set, h_element_in_the_set = sett
-            new_ratio = div(weight_set, len(h_element_in_the_set))
+            new_ratio = f(weight_set, h_element_in_the_set)
             if new_ratio < best_ratio:
                 best_ratio = new_ratio
                 best_index = i_set
         best_weight, best_set = l_sets[best_index]
-        print best_weight, best_set
+#        print best_weight, best_set
 
         # Remove best set from the list of possible sets
         del l_sets[best_index]
@@ -67,6 +67,9 @@ def greedy(h_elements, l_sets):
                 
     return total_weight
     
+    
+def usual_greedy(h_elements, l_sets):
+    return greedy_skeleton(h_elements, l_sets, f_normal_greedy)
 #%%
  
 element1 = {'a': 0, 'b': 0, 'c': 0}
@@ -75,7 +78,7 @@ sets1 = [(2, {'a':0}), \
 (3, {'a':0, 'c':0}), \
 (8, {'b':0}), \
 (8, {'b':0, 'c':0})]
-greedy(element1, sets1)
+usual_greedy(element1, sets1)
        
                 
                 
