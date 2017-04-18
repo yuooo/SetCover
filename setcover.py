@@ -73,7 +73,12 @@ verbose):
     f = lambda x: inf if x == 0 else math.exp(-x)
     return f_heuristic_frequency_general(f, h_elements, weight_set, \
     h_element_in_the_set, verbose)
-    
+
+def f_heuristic_frequency4(h_elements, weight_set, h_element_in_the_set, \
+verbose):
+    f = lambda x: div(len(h_element_in_the_set), (x-1))
+    return f_heuristic_frequency_general(f, h_elements, weight_set, \
+    h_element_in_the_set, verbose)
     
 #%% Greedy code
 
@@ -139,7 +144,10 @@ def heuristic_frequency3(h_elements, l_sets, verbose):
     preprocess_frequency(h_elements, l_sets, verbose)
     return greedy_skeleton(h_elements, l_sets, f_heuristic_frequency3, verbose)
     
-    
+def heuristic_frequency4(h_elements, l_sets, verbose):
+    print "heuristic frequency 4"
+    preprocess_frequency(h_elements, l_sets, verbose)
+    return greedy_skeleton(h_elements, l_sets, f_heuristic_frequency4, verbose)  
 
        
                 
