@@ -8,11 +8,16 @@ Created on Fri Apr 14 12:05:27 2017
 import setcover
 import data_set
 import numpy as np
+<<<<<<< HEAD
 import matplotlib.pyplot as plt
 from preprocessing import *
 import matplotlib.cm as cm
 import pandas as pd
+=======
+
+>>>>>>> 87eb61b9997392769918bbb89f863b692dfe6864
 # DATA SETS: http://people.brunel.ac.uk/~mastjjb/jeb/orlib/scpinfo.html
+
 
 #%% General functions
 def setcover_value(path, verbose):
@@ -54,6 +59,7 @@ def run_benchmark():
 
 
 b = run_benchmark()
+
 
 
 
