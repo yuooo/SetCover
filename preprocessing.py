@@ -58,24 +58,4 @@ def create_data_set(path_dir):
 
 	return list_of_elements, list_of_sets
 
-def run_experiment(path, verbose):
-
-	total_weights = []
-
-	element1, sets1 = create_data_set(path)
-	total_weights.append(setcover.usual_greedy(element1, sets1, verbose))
-
-	element1, sets1 = create_data_set(path)
-	total_weights.append(setcover.heuristic_frequency1(element1, sets1, verbose))
-	
-	element1, sets1 = create_data_set(path)
-	total_weights.append(setcover.heuristic_frequency2(element1, sets1, verbose))
-	
-	element1, sets1 = create_data_set(path)
-	total_weights.append(setcover.heuristic_frequency3(element1, sets1, verbose))
-	
-	element1, sets1 = create_data_set(path)
-	total_weights.append(setcover.heuristic_frequency4(element1, sets1, verbose))
-
-	return total_weights
 
