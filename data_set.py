@@ -1,6 +1,6 @@
 import numpy as np
 import setcover
-
+import matplotlib.pyplot as plt
 """
 @author: ea26425
 """

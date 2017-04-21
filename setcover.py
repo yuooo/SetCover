@@ -46,7 +46,8 @@ def preprocess_frequency(h_elements, l_sets, verbose):
             h_elements[element] += 1
     if verbose:
         print h_elements
-    
+
+
 def f_heuristic_frequency_general(f, h_elements, weight_set, \
 h_element_in_the_set, verbose):
     weight_heuristic = 0
@@ -79,7 +80,16 @@ verbose):
     f = lambda x: div(len(h_element_in_the_set), (x-1))
     return f_heuristic_frequency_general(f, h_elements, weight_set, \
     h_element_in_the_set, verbose)
+
+
+
+
+
+
+
+
     
+
 #%% Greedy code
 
 def greedy_skeleton(h_elements, l_sets, f, verbose):
