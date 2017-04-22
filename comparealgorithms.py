@@ -8,14 +8,11 @@ Created on Fri Apr 14 12:05:27 2017
 import setcover
 import data_set
 import numpy as np
-<<<<<<< HEAD
 import matplotlib.pyplot as plt
 from preprocessing import *
 import matplotlib.cm as cm
 import pandas as pd
-=======
 
->>>>>>> 87eb61b9997392769918bbb89f863b692dfe6864
 # DATA SETS: http://people.brunel.ac.uk/~mastjjb/jeb/orlib/scpinfo.html
 
 
@@ -38,6 +35,9 @@ def setcover_value(path, verbose):
 
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.usual_greedy(element1, sets1, verbose))
+
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_valuation1(element1, sets1, verbose))
 
     return total_weights
 
