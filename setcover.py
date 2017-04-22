@@ -65,7 +65,7 @@ verbose):
     
 def f_heuristic_frequency2(h_elements, weight_set, h_element_in_the_set, \
 verbose):
-    f = lambda x: div(1, len(h_element_in_the_set)*(x-1))
+    f = lambda x: 1 + div(1,(x-1))
     return f_heuristic_frequency_general(f, h_elements, weight_set, \
     h_element_in_the_set, verbose)
     
