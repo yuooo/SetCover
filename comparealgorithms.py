@@ -36,6 +36,9 @@ def setcover_value(path, verbose):
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.usual_greedy(element1, sets1, verbose))
 
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_valuation1(element1, sets1, verbose))
+
     return total_weights
 
 def run_benchmark():
