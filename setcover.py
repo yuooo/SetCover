@@ -14,6 +14,7 @@ they return:
 
 import math
 import copy
+from preprocessing import *
 
 #class Set:
 #    elementList = []
@@ -53,7 +54,8 @@ def brute_force_not_smart(h_elements, l_sets, verbose):
     n_sets = len(l_sets)
     min_weight = inf
     
-    for n in xrange(2**n_sets):
+    n = 0
+    while(n<2**n_sets):
         index = get_index_from_binary(bin(n), n_sets)
         
         current_weight = 0
@@ -222,6 +224,12 @@ def heuristic_frequency4(h_elements, l_sets, verbose):
     print "heuristic frequency 4"
     preprocess_frequency(h_elements, l_sets, verbose)
     return greedy_skeleton(h_elements, l_sets, f_heuristic_frequency4, verbose)  
+    
+def heuristic_frequency5(h_elements, l_sets, verbose):
+    print "heuristic frequency 5"
+    l_sets = remove_useless(l_sets)
+    preprocess_frequency(h_elements, l_sets, verbose)
+    return greedy_skeleton(h_elements, l_sets, f_heuristic_frequency1, verbose)
 
 def heuristic_valuation1(h_elements, l_sets, verbose):
     return heuristic_valuation_general(h_elements, l_sets, f_cost1, verbose)

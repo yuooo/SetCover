@@ -58,4 +58,14 @@ def create_data_set(path_dir):
 
 	return list_of_elements, list_of_sets
 
+def is_in_set(h_set1, h_set2):
+    return set(h_set1.keys()) <= set(h_set2.keys())
+        
 
+def remove_useless(l_sets):
+    l_sets_pruned = []
+    for w_set, h_set in l_sets:
+        for w_set_tocompare, h_set_tocompare in l_sets:
+            if not(is_in_set(h_set, h_set_tocompare) and w_set > w_set_tocompare):
+                l_sets_pruned.append((w_set, h_set))
+    return l_sets_pruned

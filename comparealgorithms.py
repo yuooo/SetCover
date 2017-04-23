@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 from preprocessing import *
 import matplotlib.cm as cm
 import pandas as pd
-from matplotlib.font_manager import FontProperties
 
 
 # DATA SETS: http://people.brunel.ac.uk/~mastjjb/jeb/orlib/scpinfo.html
@@ -37,15 +36,21 @@ def setcover_value(path, verbose):
 
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.heuristic_frequency4(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency5(element1, remove_useless(sets1), verbose))
+
 
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.heuristic_valuation1(element1, sets1, verbose))
     
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.heuristic_valuation_mixed(element1, sets1, verbose))
-
+    
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.usual_greedy(element1, sets1, verbose))
+    
+    
     
     return total_weights
 
@@ -124,7 +129,8 @@ def compare_greedy_matrix(setcover_value_matrix):
     
 def print_matrix(mat):
     names = ['heuristic_frequency_1', 'heuristic_mix_frequency', 'heuristic_frequency_3', \
-    'heuristic_frequency_4','heuristic_valuation_1','heuristic_mix_valuation', 'greedy']
+    'heuristic_frequency_4','heuristic_frequency_5','heuristic_valuation_1', \
+    'heuristic_mix_valuation', 'greedy']
 
     df = pd.DataFrame(mat)
     plot_matrix = df.plot(colormap = 'rainbow')
