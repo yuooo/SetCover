@@ -22,6 +22,9 @@ from matplotlib.font_manager import FontProperties
 def setcover_value(path, verbose):
 
     total_weights = []
+    
+#    element1, sets1 = create_data_set(path)
+#    total_weights.append(brute_force_not_smart(element1, sets1, verbose))
 
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.heuristic_frequency1(element1, sets1, verbose))

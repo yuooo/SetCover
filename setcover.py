@@ -32,10 +32,72 @@ def div(a,b):
         return float(a) / b
 
 #%% Brute force
+def get_index_from_binary(bin_number, n_sets):
+    index = bin_number[2:].zfill(n_sets)
+    return index
+    
+def is_set_cover(h_elements):
+    is_set_cover = True
+    for key in h_elements:
+        if h_elements[key] == 0:
+            is_set_cover = False
+        else :
+            h_elements[key] = 0
+    return is_set_cover
+    
+#%%
+    
 
-def bruteForce(h_elements, l_sets):
+def brute_force_not_smart(h_elements, l_sets, verbose):
+    print "Usual greedy"
+    n_sets = len(l_sets)
+    min_weight = inf
+    
+    for n in xrange(2**n_sets):
+        index = get_index_from_binary(bin(n), n_sets)
+        
+        current_weight = 0
+        
+        
+        # pick a set of sets
+        for i_set, (w_set, h_set) in enumerate(l_sets):
+            if index[i_set] == '1':
+                current_weight += w_set
+                for elt in h_set:
+                    h_elements[elt] += 1
+        
+        # check if set cover and update weight accordingly
+        if is_set_cover(h_elements):
+            min_weight = min(min_weight, current_weight)
+    print 'total:', min_weight
+    
+    return min_weight
+        
+    
 
-    return []
+
+#def bruteForce(h_elements, l_sets):
+#    n_sets = len(l_sets)
+#    i_min = 0
+#    i_max = 0
+#    i_set = 0
+#    set_used = [0]*n_sets
+#    min_value = inf
+#    current_cover_value = 0
+#    while (i_set > n_sets):
+#        set_used[i_set] = 1
+#        weight_newset, h_elt_newset = l_sets[i_set]
+#        
+#        #check if new coverage is worth it
+#        if current_cover_value + weight_newset < min_value:
+#            current_cover_value += weight_newset
+#            
+#            # update coverage
+#            for elt in h_elt_newset:
+#                h_elements[elt] += 1
+#        else:
+#            
+#return []
     
 #%% Greedy heuristic functions
     
