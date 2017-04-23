@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 from preprocessing import *
 import matplotlib.cm as cm
 import pandas as pd
+from matplotlib.font_manager import FontProperties
+
 
 # DATA SETS: http://people.brunel.ac.uk/~mastjjb/jeb/orlib/scpinfo.html
 
@@ -34,11 +36,14 @@ def setcover_value(path, verbose):
     total_weights.append(setcover.heuristic_frequency4(element1, sets1, verbose))
 
     element1, sets1 = create_data_set(path)
-    total_weights.append(setcover.usual_greedy(element1, sets1, verbose))
+    total_weights.append(setcover.heuristic_valuation1(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_valuation_mixed(element1, sets1, verbose))
 
     element1, sets1 = create_data_set(path)
-    total_weights.append(setcover.heuristic_valuation1(element1, sets1, verbose))
-
+    total_weights.append(setcover.usual_greedy(element1, sets1, verbose))
+    
     return total_weights
 
 def run_benchmark():
@@ -92,6 +97,43 @@ def compare_algo(setcover_value_matrix):
         
 compare_algo(b)
 
+def compare_greedy_scoring(setcover_value_matrix):
+    """ 
+    scoring : sum_instance (algo(instance) - greedy(instance)) / greedy(instance) 
+    """
+    nrows, ncols = setcover_value_matrix.shape
+    scores = np.zeros((1, ncols))
+    for irow in range(nrows):
+        greedy_value = setcover_value_matrix[irow][-1]
+        for icol in range(ncols):
+            scores[0][icol] += float(setcover_value_matrix[irow][icol])/greedy_value - 1
+    return scores/nrows * 100
+    
+def compare_greedy_matrix(setcover_value_matrix):
+    nrows, ncols = setcover_value_matrix.shape
+    scores = np.zeros((nrows, ncols))
+    for irow in range(nrows):
+        greedy_value = setcover_value_matrix[irow][-1]
+        for icol in range(ncols):
+            scores[irow][icol] = float(setcover_value_matrix[irow][icol])/greedy_value - 1
+            
+    return scores
+    
+def print_matrix(mat):
+    names = ['heuristic_frequency_1', 'heuristic_mix_frequency', 'heuristic_frequency_3', \
+    'heuristic_frequency_4','heuristic_valuation_1','heuristic_mix_valuation', 'greedy']
+
+    df = pd.DataFrame(mat)
+    plot_matrix = df.plot(colormap = 'rainbow')
+    plot_matrix.legend(names, loc='center left', bbox_to_anchor=(1, 0.5))
+    
+#%%
+    
+c = compare_greedy_matrix(b)
+print_matrix(c)
+
+#%%
+print compare_greedy_scoring(b)
 
 
 

@@ -34,6 +34,7 @@ def div(a,b):
 #%% Brute force
 
 def bruteForce(h_elements, l_sets):
+
     return []
     
 #%% Greedy heuristic functions
@@ -162,6 +163,9 @@ def heuristic_frequency4(h_elements, l_sets, verbose):
 
 def heuristic_valuation1(h_elements, l_sets, verbose):
     return heuristic_valuation_general(h_elements, l_sets, f_cost1, verbose)
+    
+def heuristic_valuation_mixed(h_elements, l_sets, verbose):
+    return heuristic_valuation_general(h_elements, l_sets, f_cost_mixed, verbose)
 
 
 
@@ -169,6 +173,13 @@ def f_cost1(v_elements, weight_set, h_element_in_the_set, verbose):
     value_set = 0
     for element in h_element_in_the_set:
         value_set += v_elements[element]
+    ratio = div(weight_set, value_set) 
+    return ratio
+    
+def f_cost_mixed(v_elements, weight_set, h_element_in_the_set, verbose):
+    value_set = 0
+    for element in h_element_in_the_set:
+        value_set += 100 + v_elements[element]
     ratio = div(weight_set, value_set) 
     return ratio
 
