@@ -1,0 +1,9 @@
+[[-0.83394003 -0.96040793  2.72150215  1.35603757 -0.8747168  -0.96040793
+  -0.97171628 -0.71917352 -0.51517181 -0.78692327 -0.79098385 -0.95145994
+  -2.87721536  0.        ]]
+
+['1/(f-1)', '1 + 1/(f-1)', 'e^(-f)', \
+    'n_elt_in_the_set/(f-1)','preprocess, then 1/(f-1)','preprocess, then 1 + 1/(f-1)', \
+    'preprocess, then 1/(f-1)^2','preprocess, then 1/(f-1)^3','preprocess, then 1/(f-1)^(1/2)', \
+    'heuristic_valuation_1', 'heuristic_valuation_2', 'heuristic_mix_valuation', \
+    'best', 'greedy']
