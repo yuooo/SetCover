@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Set Cover \& Greedy Algorithm}{3}{0}{1}
+\beamer@sectionintoc {2}{Greedy Heuristics}{9}{0}{2}
+\beamer@sectionintoc {3}{Experiments \& Results}{18}{0}{3}

@@ -144,7 +144,7 @@ $$ \text{value}(e_i) = \cfrac{\sum_{S_j: e_i \in S_j} \text{average\_weight}(S_j
 \begin{block}{Approximation result}
 Any greedy heuristic, caracterized by its value() function, is a $\displaystyle\frac{\displaystyle\max_{e_i} value(e_i)}{\displaystyle\min_{e_i} value(e_i)} \cdot H_n$-approximation.
 \end{block}
-\textbf{Remark:} This shows any greedy heuristics will have worse theoretical guarantees if our analysis is tight.
+\textbf{Remark:} This shows any greedy heuristics will have worse theoretical guarantees if our analysis is tight. The proof follows the same ideas as in our textbook \cite{Shmoys}.
 \end{frame}
 
 \section{Experiments \& Results}
@@ -172,6 +172,10 @@ Any greedy heuristic, caracterized by its value() function, is a $\displaystyle\
 
 \begin{frame}
 \frametitle{Data Sets}
+Datasets found at \url{people.brunel.ac.uk/~mastjjb/jeb/orlib/scpinfo.html} \\
+\textbf{Description:} OR-Library is a collection of test data sets for a variety of OR problems \\
+\textbf{Officious description:} This is the most complete benchmark we found for datasets for set cover, used for instance in \cite{David} \\
+\textbf{TL;DR:} 24 datasets, around 100 elements, around 2000 sets $\rightarrow$ naive brute force won't work.
 \end{frame}
 
 \begin{frame}
@@ -227,7 +231,10 @@ The best algorithm achieves a gain of \textbf{-0.96 \%}. If we combine all the a
 \begin{frame}
 \frametitle{References}
 \begin{thebibliography}{1}
-\bibitem{David} David Kordalewski, New Greedy Heuristics For Set Cover and Set Packing,CoRR, abs/1305.3584,2013.
+\bibitem{Shmoys} [1] Williamson, David P.
+Shmoys, David B., The Design of Approximation Algorithms, Cambridge University Press, 2011
+\bibitem{David} [2] David Kordalewski, New Greedy Heuristics For Set Cover and Set Packing,CoRR, abs/1305.3584,2013.
+
 \end{thebibliography}
 \end{frame}
 
