@@ -1,4 +1,4 @@
-PWD /Users/eirini/Dropbox/UT/semester2/Advanced_Algorithms_EE381V/presentation
+PWD /Users/eirini/Documents/Git/SetCover/presentation
 INPUT /usr/local/texlive/2015/texmf.cnf
 INPUT /usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2015/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -379,6 +379,8 @@ INPUT ./excavators.eps
 INPUT ./excavators-eps-converted-to.pdf
 INPUT ./excavators-eps-converted-to.pdf
 INPUT ./excavators-eps-converted-to.pdf
+INPUT frame2.pdf
+INPUT ./frame2.pdf
 OUTPUT project_presentation.nav
 OUTPUT project_presentation.toc
 OUTPUT project_presentation.snm

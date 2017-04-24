@@ -33,7 +33,7 @@
 }
 
 
-\title[Your Short Title]{Greedy Heuristics for set cover}
+\title[Your Short Title]{Greedy Heuristics for Set Cover}
 \author{Eirini Asteri, Jessica Hoffmann}
 \institute{University of Texas, Austin}
 \date{}
@@ -119,11 +119,15 @@ $$ best\_set = \arg \min_{j} \cfrac{w_j}{v_j} = \arg \min_{j} \cfrac{w_j}{\sum \
 \end{frame}
 
 \begin{frame}
-\frametitle{Another Heuristic Valuation..}
+\frametitle{Another Heuristic Value Function..}
 Dig Deeper, Extract more Information \inlinegraphics{excavators.eps}
+\begin{minipage}{0.25\textwidth}
+\only<1>{\includegraphics[width=\columnwidth]{frame2.pdf}}%
+\end{minipage}%
+\begin{minipage}{0.75\textwidth}
 $$ \text{value}(e_i) = \cfrac{\sum_{S_j: e_i \in S_j} \text{average\_weight}(S_j)}{\text{frequency}(e_i)-1}$$
+\end{minipage}
 An element is valuable if it is contained in ``expensive'' sets.
-
 [\textbf{Intuition}] Choose a ``\textbf{cheap}'' set that contains elements that are ``\textbf{expensive in the market}''.
 \end{frame}
 
