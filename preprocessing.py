@@ -64,8 +64,12 @@ def is_in_set(h_set1, h_set2):
 
 def remove_useless(l_sets):
     l_sets_pruned = []
-    for w_set, h_set in l_sets:
-        for w_set_tocompare, h_set_tocompare in l_sets:
-            if not(is_in_set(h_set, h_set_tocompare) and w_set > w_set_tocompare):
-                l_sets_pruned.append((w_set, h_set))
+    for i_1, (w_set, h_set) in enumerate(l_sets):
+        is_good = True
+        for i_2, (w_set_tocompare, h_set_tocompare) in enumerate(l_sets):
+            if is_in_set(h_set, h_set_tocompare) and w_set > w_set_tocompare:
+                is_good = False
+                break
+        if is_good:
+            l_sets_pruned.append((w_set, h_set))
     return l_sets_pruned

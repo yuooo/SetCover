@@ -38,7 +38,7 @@ def setcover_value(path, verbose):
     total_weights.append(setcover.heuristic_frequency4(element1, sets1, verbose))
     
     element1, sets1 = create_data_set(path)
-    total_weights.append(setcover.heuristic_frequency5(element1, remove_useless(sets1), verbose))
+    total_weights.append(setcover.heuristic_frequency5(element1, sets1, verbose))
 
 
     element1, sets1 = create_data_set(path)

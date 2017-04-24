@@ -87,6 +87,6 @@ element1 = {'a': 0, 'b': 0, 'c': 0}
 sets1 = [(2, {'a':0}), \
 (10, {'b':0, 'c':0}), \
 (3, {'a':0, 'c':0}), \
-(8, {'b':0}), \
+(9, {'b':0}), \
 (8, {'b':0, 'c':0})]
 setcover.brute_force_not_smart(element1, sets1)

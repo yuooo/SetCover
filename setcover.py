@@ -227,9 +227,9 @@ def heuristic_frequency4(h_elements, l_sets, verbose):
     
 def heuristic_frequency5(h_elements, l_sets, verbose):
     print "heuristic frequency 5"
-    l_sets = remove_useless(l_sets)
-    preprocess_frequency(h_elements, l_sets, verbose)
-    return greedy_skeleton(h_elements, l_sets, f_heuristic_frequency1, verbose)
+    l_sets1 = remove_useless(l_sets)
+    preprocess_frequency(h_elements, l_sets1, verbose)
+    return greedy_skeleton(h_elements, l_sets1, f_heuristic_frequency1, verbose)
 
 def heuristic_valuation1(h_elements, l_sets, verbose):
     return heuristic_valuation_general(h_elements, l_sets, f_cost1, verbose)
