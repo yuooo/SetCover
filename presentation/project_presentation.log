@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 APR 2017 22:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.26)  23 APR 2017 23:06
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **project_presentation.tex
 (./project_presentation.tex
@@ -1109,10 +1110,10 @@ Overfull \vbox (67.10938pt too high) detected at line 70
 
 ]
 Package epstopdf Info: Source file: <sweep.eps>
-(epstopdf)                    date: 2017-04-23 21:25:05
+(epstopdf)                    date: 2017-04-23 22:48:27
 (epstopdf)                    size: 760114 bytes
 (epstopdf)             Output file: <sweep-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-04-23 21:28:24
+(epstopdf)                    date: 2017-04-23 22:48:27
 (epstopdf)                    size: 11168 bytes
 (epstopdf)             Command: <repstopdf --outfile=sweep-eps-converted-to.pdf
  sweep.eps>
@@ -1132,10 +1133,10 @@ Package pdftex.def Info: sweep-eps-converted-to.pdf used on input line 77.
 File: frame3.pdf Graphic file (type pdf)
 
 <use frame3.pdf>
-Package pdftex.def Info: frame3.pdf used on input line 102.
+Package pdftex.def Info: frame3.pdf used on input line 107.
 (pdftex.def)             Requested size: 92.1879pt x 126.40323pt.
 
-Overfull \vbox (3.90991pt too high) detected at line 102
+Overfull \vbox (3.90991pt too high) detected at line 107
  []
 
 [10
@@ -1143,10 +1144,10 @@ Overfull \vbox (3.90991pt too high) detected at line 102
 ]
 File: frame3.pdf Graphic file (type pdf)
  <use frame3.pdf>
-Package pdftex.def Info: frame3.pdf used on input line 102.
+Package pdftex.def Info: frame3.pdf used on input line 107.
 (pdftex.def)             Requested size: 92.1879pt x 126.40323pt.
 
-Overfull \vbox (3.90991pt too high) detected at line 102
+Overfull \vbox (3.90991pt too high) detected at line 107
  []
 
 [11
@@ -1154,10 +1155,10 @@ Overfull \vbox (3.90991pt too high) detected at line 102
 ]
 File: frame3.pdf Graphic file (type pdf)
  <use frame3.pdf>
-Package pdftex.def Info: frame3.pdf used on input line 102.
+Package pdftex.def Info: frame3.pdf used on input line 107.
 (pdftex.def)             Requested size: 92.1879pt x 126.40323pt.
 
-Overfull \vbox (3.90991pt too high) detected at line 102
+Overfull \vbox (3.90991pt too high) detected at line 107
  []
 
 [12
@@ -1165,10 +1166,10 @@ Overfull \vbox (3.90991pt too high) detected at line 102
 ] <value.pdf, id=560, 202.54123pt x 326.49117pt>
 File: value.pdf Graphic file (type pdf)
  <use value.pdf>
-Package pdftex.def Info: value.pdf used on input line 102.
+Package pdftex.def Info: value.pdf used on input line 107.
 (pdftex.def)             Requested size: 92.1879pt x 148.60352pt.
 
-Overfull \vbox (26.1102pt too high) detected at line 102
+Overfull \vbox (26.1102pt too high) detected at line 107
  []
 
 [13
@@ -1176,10 +1177,10 @@ Overfull \vbox (26.1102pt too high) detected at line 102
  <./value.pdf>]
 File: value.pdf Graphic file (type pdf)
  <use value.pdf>
-Package pdftex.def Info: value.pdf used on input line 102.
+Package pdftex.def Info: value.pdf used on input line 107.
 (pdftex.def)             Requested size: 92.1879pt x 148.60352pt.
 
-Overfull \vbox (26.1102pt too high) detected at line 102
+Overfull \vbox (26.1102pt too high) detected at line 107
  []
 
 [14
@@ -1187,14 +1188,14 @@ Overfull \vbox (26.1102pt too high) detected at line 102
 ]
 File: value.pdf Graphic file (type pdf)
  <use value.pdf>
-Package pdftex.def Info: value.pdf used on input line 119.
+Package pdftex.def Info: value.pdf used on input line 124.
 (pdftex.def)             Requested size: 92.1879pt x 148.60352pt.
 
-Overfull \vbox (26.1102pt too high) detected at line 119
+Overfull \vbox (26.1102pt too high) detected at line 124
  []
 
 
-Overfull \hbox (10.33514pt too wide) detected at line 119
+Overfull \hbox (10.33514pt too wide) detected at line 124
 \OT1/mathkerncmss/m/sl/10.95 best[]set \OT1/cmss/m/n/10.95 = [] [] [] = [] [] [
 ]
  []
@@ -1204,14 +1205,14 @@ Overfull \hbox (10.33514pt too wide) detected at line 119
 ]
 File: value.pdf Graphic file (type pdf)
  <use value.pdf>
-Package pdftex.def Info: value.pdf used on input line 119.
+Package pdftex.def Info: value.pdf used on input line 124.
 (pdftex.def)             Requested size: 92.1879pt x 148.60352pt.
 
-Overfull \vbox (26.1102pt too high) detected at line 119
+Overfull \vbox (26.1102pt too high) detected at line 124
  []
 
 
-Overfull \hbox (10.33514pt too wide) detected at line 119
+Overfull \hbox (10.33514pt too wide) detected at line 124
 \OT1/mathkerncmss/m/sl/10.95 best[]set \OT1/cmss/m/n/10.95 = [] [] [] = [] [] [
 ]
  []
@@ -1220,25 +1221,25 @@ Overfull \hbox (10.33514pt too wide) detected at line 119
 
 ]
 Package epstopdf Info: Source file: <excavators.eps>
-(epstopdf)                    date: 2017-04-23 20:49:59
+(epstopdf)                    date: 2017-04-23 22:48:27
 (epstopdf)                    size: 683250 bytes
 (epstopdf)             Output file: <excavators-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-04-23 20:51:33
+(epstopdf)                    date: 2017-04-23 22:48:27
 (epstopdf)                    size: 11556 bytes
 (epstopdf)             Command: <repstopdf --outfile=excavators-eps-converted-t
 o.pdf excavators.eps>
-(epstopdf)             \includegraphics on input line 132.
+(epstopdf)             \includegraphics on input line 137.
 Package epstopdf Info: Output file is already uptodate.
  <excavators-eps-converted-to.pdf, id=739, 514.92375pt x 418.56375pt>
 File: excavators-eps-converted-to.pdf Graphic file (type pdf)
 
 <use excavators-eps-converted-to.pdf>
-Package pdftex.def Info: excavators-eps-converted-to.pdf used on input line 132
+Package pdftex.def Info: excavators-eps-converted-to.pdf used on input line 137
 .
 (pdftex.def)             Requested size: 11.96634pt x 9.73332pt.
 File: frame2.pdf Graphic file (type pdf)
  <use frame2.pdf>
-Package pdftex.def Info: frame2.pdf used on input line 132.
+Package pdftex.def Info: frame2.pdf used on input line 137.
 (pdftex.def)             Requested size: 76.82246pt x 107.14677pt.
  [17
 
@@ -1260,11 +1261,11 @@ Package pdftex.def Info: frame2.pdf used on input line 132.
 \tf@snm=\write8
 \openout8 = `project_presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
  (./project_presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 169.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
 Package rerunfilecheck Info: File `project_presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1272,7 +1273,7 @@ Package rerunfilecheck Info: File `project_presentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
  18878 strings out of 493089
@@ -1292,7 +1293,7 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on project_presentation.pdf (21 pages, 495827 bytes).
+Output written on project_presentation.pdf (21 pages, 497946 bytes).
 PDF statistics:
  917 PDF objects out of 1000 (max. 8388607)
  744 compressed objects within 8 object streams

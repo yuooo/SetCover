@@ -78,6 +78,11 @@ If $S_{small} \subseteq S_{big}$ and $\text{weight}(S_{small})\geq \text{weight}
 
 \begin{frame}
 \frametitle{Theoretical Analysis}
+\begin{block}{Approximation result}
+Any greedy heuristic, caracterized by its value() function, is a $\displaystyle\frac{\displaystyle\max_{e_i} value(e_i)}{\displaystyle\min_{e_i} value(e_i)} \cdot H_n$-approximation.
+\end{block}
+
+\textbf{Remark:} This shows any greedy heuristics will have worse theoretical guarantees if our analysis is tight.
 \end{frame}
 
 \begin{frame}
