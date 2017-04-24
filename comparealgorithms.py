@@ -87,9 +87,6 @@ def setcover_value2(path, verbose):
     
 #    element1, sets1 = create_data_set(path)
 #    total_weights.append(brute_force_not_smart(element1, sets1, verbose))
-
-    element1, sets1 = create_data_set(path)
-    total_weights.append(setcover.heuristic_frequency1(element1, sets1, verbose))
     
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.heuristic_frequency5(element1, sets1, verbose))
@@ -107,16 +104,18 @@ def setcover_value2(path, verbose):
     total_weights.append(setcover.heuristic_frequency9(element1, sets1, verbose))
     
     element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_valuation_mixed(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
     greedy_value = setcover.usual_greedy(element1, sets1, verbose)
     total_weights.append(greedy_value)
 #    
 #    total_weights.append(greedy_value)
 #    total_weights[-2] = min(total_weights)
     
-    names = ['heuristic_frequency_1', \
-    'heuristic_frequency_5','heuristic_frequency_6', \
-    'heuristic_frequency_7','heuristic_frequency_8', \
-    'heuristic_frequency_9', 'best', 'greedy']
+    names = ['1/(f-1)','1 + 1/(f-1)', \
+    '1/(f-1)^2','1/(f-1)^3', \
+    '1/(f-1)^(1/2)', 'valuation mixed', 'greedy']
     
     return total_weights, names
 
@@ -125,7 +124,7 @@ def run_benchmark():
     datasets = range(41,50) + range(51,60) + range(61,66) + [410]
     for dataset in datasets:
         path = "data_sets/scp"+str(dataset)+".txt"
-        total_weights, legend = setcover_value1(path, False)
+        total_weights, legend = setcover_value2(path, False)
         setcover_value_matrix = np.vstack((setcover_value_matrix, total_weights)) if len(setcover_value_matrix) else total_weights 
         with open("Output.txt", "w") as text_file:
             text_file.write(str(setcover_value_matrix))
@@ -190,13 +189,23 @@ def compare_greedy_matrix(setcover_value_matrix):
         for icol in range(ncols):
             scores[irow][icol] = float(setcover_value_matrix[irow][icol])/greedy_value - 1
             
-    return scores
+    return scores * 100
     
 
     
 
     
 #%%
+    
+names1 = ['1/(f-1)', '1 + 1/(f-1)', 'e^(-f)', \
+    'n_elt_in_the_set/(f-1)','preprocess, then 1/(f-1)','preprocess, then 1 + 1/(f-1)', \
+    'preprocess, then 1/(f-1)^2','preprocess, then 1/(f-1)^3','preprocess, then 1/(f-1)^(1/2)', \
+    'heuristic_valuation_1', 'heuristic_valuation_2', 'heuristic_mix_valuation', \
+    'best', 'greedy']
+    
+names2 = ['1/(f-1)','1 + 1/(f-1)', \
+    '1/(f-1)^2','1/(f-1)^3', \
+    '1/(f-1)^(1/2)', 'valuation mixed', 'greedy']
     
 c = compare_greedy_matrix(b)
 print_matrix(c, legend)
