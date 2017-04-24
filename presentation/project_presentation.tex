@@ -179,33 +179,45 @@ An element is valuable if it is contained in ``expensive'' sets.
     Heuristics & $\cfrac{1}{f_i -1} $& $1+\cfrac{1}{f_i -1}$& $ \cfrac{1}{(f_i -1)^2}$ & $\cfrac{1}{(f_i -1)^3}$ 
     & $\cfrac{1}{\sqrt{f_i -1}}$ & valuation-mixed & Greedy  \\
           \hline 
-      Dataset 1 & 477 & 461&  477&  477&  461 & 463 & 463 \\
- Dataset 2 & 566 & 572 & 580 & 588&  572&  580&  582 \\
- Dataset 3 &564 & 589 & 552&  547&  582&  596 & 598 \\
- Dataset 4 &540 & 541&  561 & 550&  541&  547 & 548 \\
- Dataset 5 &575&  577&  573&  567 & 584 & 577&  577 \\
- Dataset 6 &596 &  606&  580&  588&  606&  606 & 615 \\
- Dataset 7 &480 & 474&  461&  466 & 481&  476 & 476 \\
- Dataset 8 &542 & 533&  542 & 548&  538 &  537 &  533\\
- Dataset 9 &747 &  744 &  732 &  722  & 746 &  747  & 747 \\
+      Dataset 1 & 477 & \textcolor{LimeGreen}{461}&  477&  477&  \textcolor{LimeGreen}{461} & \textcolor{ProcessBlue}{463} & 463 \\
+ Dataset 2 & \textcolor{LimeGreen}{566} & \textcolor{ProcessBlue}{572} & \textcolor{ProcessBlue}{580} & 588&  \textcolor{ProcessBlue}{572}&  \textcolor{ProcessBlue}{580} &  582 \\
+ Dataset 3 &\textcolor{ProcessBlue}{564} & \textcolor{ProcessBlue}{589} & \textcolor{ProcessBlue}{552}&  \textcolor{LimeGreen}{547}&  \textcolor{ProcessBlue}{582}&  \textcolor{ProcessBlue}{596} & 598 \\
+ Dataset 4 &\textcolor{LimeGreen}{540} & \textcolor{ProcessBlue}{541}&  561 & 550&  \textcolor{ProcessBlue}{541}&  \textcolor{ProcessBlue}{547} & 548 \\
+ Dataset 5 &\textcolor{ProcessBlue}{575}&  \textcolor{ProcessBlue}{577}&  \textcolor{ProcessBlue}{573}&  \textcolor{LimeGreen}{567} & 584 & \textcolor{ProcessBlue}{577}&  577 \\
+ Dataset 6 &\textcolor{ProcessBlue}{596} &  \textcolor{ProcessBlue}{606}& \textcolor{LimeGreen}{ 580}&  \textcolor{ProcessBlue}{588}&  \textcolor{ProcessBlue}{606}&  \textcolor{ProcessBlue}{606} & 615 \\
+ Dataset 7 &480 & \textcolor{ProcessBlue}{474}&  \textcolor{LimeGreen}{461}&  \textcolor{ProcessBlue}{466} & 481&  \textcolor{ProcessBlue}{476} & 476 \\
+ Dataset 8 &542 & \textcolor{LimeGreen}{533}&  542 & 548&  538 &  537 &  533\\
+ Dataset 9 &\textcolor{ProcessBlue}{747} &  \textcolor{ProcessBlue}{744} &  \textcolor{ProcessBlue}{732} &  \textcolor{LimeGreen}{722}  & \textcolor{ProcessBlue}{746} &  \textcolor{ProcessBlue}{747}  & 747 \\
  Dataset 10 &290  & 291  & 291  & 290 &  291 &  292 &  289 \\
- Dataset 11 &345 &  343  & 339 &  341  & 343 &  342  & 348 \\
- Dataset 12 &246  & 246  & 245 &  252  & 246  & 246  & 246 \\
- Dataset 13 &262 &  266 &  265  & 257  & 266  & 267 &  265 \\
- Dataset 14 &234  & 234  & 235 &  235  & 234 &  233  & 236 \\
-Dataset 15 & 250  & 250  & 244  & 242  & 250 &  245 &  251 \\
- Dataset 16 & 317  & 315  & 311  & 310  & 315  & 320  & 326 \\
- Dataset 17 & 313  & 313 &  314  & 317 &  313  & 313  & 323 \\
- Dataset 18 & 304  & 308 &  307  & 316 &  308  & 304 &  312\\
- Dataset 19 & 159 &  160 &  164  & 163  & 159 &  157  & 159 \\
- Dataset 20 & 171  & 170 &  172  & 176  & 171  & 170  & 170 \\
- Dataset 21& 161  & 156  & 159  & 159 &  163  & 156  & 161 \\
- Dataset 22& 149  & 149 &  149  & 148  & 149  & 145 &  149 \\
- Dataset 23& 195 &  191  & 194 &  203 &  195 &  192 &  196 \\
- Dataset 24 & 545  &  548 &  565  & 554 &  557  & 550  & 556 \\
+ Dataset 11 &\textcolor{ProcessBlue}{345} &  \textcolor{ProcessBlue}{343}  & \textcolor{LimeGreen}{339} &  \textcolor{ProcessBlue}{341}  & \textcolor{ProcessBlue}{343} &  \textcolor{ProcessBlue}{342}  & 348 \\
+ Dataset 12 &\textcolor{ProcessBlue}{246}  & \textcolor{ProcessBlue}{246}  & \textcolor{LimeGreen}{245} &  252  & \textcolor{ProcessBlue}{246}  & \textcolor{ProcessBlue}{246}  & 246 \\
+ Dataset 13 &\textcolor{ProcessBlue}{262} &  266 &  \textcolor{ProcessBlue}{265}  & \textcolor{LimeGreen}{257}  & 266  & 267 &  265 \\
+ Dataset 14 &\textcolor{ProcessBlue}{234}  & \textcolor{ProcessBlue}{234}  & \textcolor{ProcessBlue}{235} &  \textcolor{ProcessBlue}{235}  & \textcolor{ProcessBlue}{234} &  \textcolor{LimeGreen}{233}  & 236 \\
+Dataset 15 & \textcolor{ProcessBlue}{250}  & \textcolor{ProcessBlue}{250}  & \textcolor{ProcessBlue}{244}  & \textcolor{LimeGreen}{242}  & \textcolor{ProcessBlue}{250} &  \textcolor{ProcessBlue}{245} &  251 \\
+ Dataset 16 & \textcolor{ProcessBlue}{317}  & \textcolor{ProcessBlue}{315}  & \textcolor{ProcessBlue}{311}  & \textcolor{LimeGreen}{310}  & \textcolor{ProcessBlue}{315}  & \textcolor{ProcessBlue}{320}  & 326 \\
+ Dataset 17 & \textcolor{LimeGreen}{313}  & \textcolor{LimeGreen}{313} &  \textcolor{ProcessBlue}{314}  & \textcolor{ProcessBlue}{317} &  \textcolor{LimeGreen}{313}  & \textcolor{LimeGreen}{313}  & 323 \\
+ Dataset 18 & \textcolor{LimeGreen}{304}  & \textcolor{ProcessBlue}{308} &  \textcolor{ProcessBlue}{307}  & 316 &  \textcolor{ProcessBlue}{308}  & \textcolor{LimeGreen}{304} &  312\\
+ Dataset 19 & \textcolor{ProcessBlue}{159} &  160 &  164  & 163  & \textcolor{ProcessBlue}{159} &  \textcolor{LimeGreen}{157}  & 159 \\
+ Dataset 20 & 171  & \textcolor{LimeGreen}{170} &  172  & 176  & 171  & \textcolor{LimeGreen}{170}  & 170 \\
+ Dataset 21& \textcolor{ProcessBlue}{161}  & \textcolor{LimeGreen}{156}  & \textcolor{ProcessBlue}{159}  & \textcolor{ProcessBlue}{159} &  163  & \textcolor{LimeGreen}{156}  & 161 \\
+ Dataset 22& \textcolor{ProcessBlue}{149}  & \textcolor{ProcessBlue}{149} &  \textcolor{ProcessBlue}{149}  & \textcolor{ProcessBlue}{148}  & \textcolor{ProcessBlue}{149}  & \textcolor{LimeGreen}{145} &  149 \\
+ Dataset 23& \textcolor{ProcessBlue}{195} &  \textcolor{LimeGreen}{191}  & \textcolor{ProcessBlue}{194} &  203 &  \textcolor{ProcessBlue}{195} &  \textcolor{ProcessBlue}{192} &  196 \\
+ Dataset 24 & \textcolor{LimeGreen}{545}  &  \textcolor{ProcessBlue}{548} &  565  & \textcolor{ProcessBlue}{554} &  557  & \textcolor{ProcessBlue}{550}  & 556 \\
      \hline
-  \end{tabular}}
+  \end{tabular}} 
+   \begin{itemize}
+\item<2-> Most of our heuristics are better than Greedy most of the time
+\item<3-> The best heuristic varies a lot across datasets
+\end{itemize}
 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Experimental Results}
+Here are the gains in percents of the greedy objective, for the top 6 heuristics:
+\includegraphics[width=\textwidth]{../results/heuristics_best6} \\
+The best algorithm achieves a gain of \textbf{-0.96 \%}. If we combine all the algorithms, we have an average gain of \textbf{-2.88 \%}.
 
 \end{frame}
 
