@@ -147,7 +147,23 @@ verbose):
     return f_heuristic_frequency_general(f, h_elements, weight_set, \
     h_element_in_the_set, verbose)
 
-
+def f_heuristic_frequency7(h_elements, weight_set, h_element_in_the_set, \
+verbose):
+    f = lambda x: div(1, (x-1)**2)
+    return f_heuristic_frequency_general(f, h_elements, weight_set, \
+    h_element_in_the_set, verbose)
+    
+def f_heuristic_frequency8(h_elements, weight_set, h_element_in_the_set, \
+verbose):
+    f = lambda x: div(1, (x-1)**3)
+    return f_heuristic_frequency_general(f, h_elements, weight_set, \
+    h_element_in_the_set, verbose)
+    
+def f_heuristic_frequency9(h_elements, weight_set, h_element_in_the_set, \
+verbose):
+    f = lambda x: div(1, math.sqrt(x-1))
+    return f_heuristic_frequency_general(f, h_elements, weight_set, \
+    h_element_in_the_set, verbose)
 
 
 
@@ -230,14 +246,45 @@ def heuristic_frequency5(h_elements, l_sets, verbose):
     l_sets1 = remove_useless(l_sets)
     preprocess_frequency(h_elements, l_sets1, verbose)
     return greedy_skeleton(h_elements, l_sets1, f_heuristic_frequency1, verbose)
+    
+def heuristic_frequency6(h_elements, l_sets, verbose):
+    print "heuristic frequency 6"
+    l_sets1 = remove_useless(l_sets)
+    preprocess_frequency(h_elements, l_sets1, verbose)
+    return greedy_skeleton(h_elements, l_sets1, f_heuristic_frequency2, verbose)
+    
+def heuristic_frequency7(h_elements, l_sets, verbose):
+    print "heuristic frequency 7"
+    l_sets1 = remove_useless(l_sets)
+    preprocess_frequency(h_elements, l_sets1, verbose)
+    return greedy_skeleton(h_elements, l_sets1, f_heuristic_frequency7, verbose)
+    
+def heuristic_frequency8(h_elements, l_sets, verbose):
+    print "heuristic frequency 8"
+    l_sets1 = remove_useless(l_sets)
+    preprocess_frequency(h_elements, l_sets1, verbose)
+    return greedy_skeleton(h_elements, l_sets1, f_heuristic_frequency8, verbose)
+    
+def heuristic_frequency9(h_elements, l_sets, verbose):
+    print "heuristic frequency 9"
+    l_sets1 = remove_useless(l_sets)
+    preprocess_frequency(h_elements, l_sets1, verbose)
+    return greedy_skeleton(h_elements, l_sets1, f_heuristic_frequency9, verbose)
 
 def heuristic_valuation1(h_elements, l_sets, verbose):
+    print "heuristic valuation 1"
     return heuristic_valuation_general(h_elements, l_sets, f_cost1, verbose)
     
+def heuristic_valuation2(h_elements, l_sets, verbose):
+    print "heuristic valuation 2"
+    l_sets1 = remove_useless(l_sets)
+    return heuristic_valuation_general(h_elements, l_sets1, f_cost1, verbose)    
+    
 def heuristic_valuation_mixed(h_elements, l_sets, verbose):
+    print "heuristic valuation mixed"
     return heuristic_valuation_general(h_elements, l_sets, f_cost_mixed, verbose)
 
-
+    
 
 def f_cost1(v_elements, weight_set, h_element_in_the_set, verbose):
     value_set = 0
@@ -270,7 +317,7 @@ def heuristic_valuation_skeleton(h_elements, v_elements, l_sets, f_ratio, verbos
                 v_elements[element] += div(weight_set, len(h_element_in_the_set))
 
         for element in h_elements:
-            v_elements[element] = div(v_elements[element], h_elements[element])
+            v_elements[element] = div(v_elements[element], h_elements[element]-1)
 
         for i_set, sett in enumerate(l_sets):
             weight_set, h_element_in_the_set = sett

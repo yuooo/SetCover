@@ -16,9 +16,13 @@ import pandas as pd
 
 # DATA SETS: http://people.brunel.ac.uk/~mastjjb/jeb/orlib/scpinfo.html
 
+def print_matrix(mat, legend):
+    df = pd.DataFrame(mat)
+    plot_matrix = df.plot(colormap = 'rainbow')
+    plot_matrix.legend(legend, loc='center left', bbox_to_anchor=(1, 0.5))
 
 #%% General functions
-def setcover_value(path, verbose):
+def setcover_value1(path, verbose):
 
     total_weights = []
     
@@ -39,39 +43,100 @@ def setcover_value(path, verbose):
     
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.heuristic_frequency5(element1, sets1, verbose))
-
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency6(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency7(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency8(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency9(element1, sets1, verbose))
 
     element1, sets1 = create_data_set(path)
     total_weights.append(setcover.heuristic_valuation1(element1, sets1, verbose))
     
     element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_valuation2(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
     total_weights.append(setcover.heuristic_valuation_mixed(element1, sets1, verbose))
     
     element1, sets1 = create_data_set(path)
-    total_weights.append(setcover.usual_greedy(element1, sets1, verbose))
+    greedy_value = setcover.usual_greedy(element1, sets1, verbose)
+    total_weights.append(greedy_value)
+    
+    total_weights.append(greedy_value)
+    total_weights[-2] = min(total_weights)
+    
+    names = ['heuristic_frequency_1', 'heuristic_mix_frequency', 'heuristic_frequency_3', \
+    'heuristic_frequency_4','heuristic_frequency_5','heuristic_frequency_6', \
+    'heuristic_frequency_7','heuristic_frequency_8','heuristic_frequency_9', \
+    'heuristic_valuation_1', 'heuristic_valuation_2', 'heuristic_mix_valuation', \
+    'best', 'greedy']
+    
+    return total_weights, names
     
     
+def setcover_value2(path, verbose):
+
+    total_weights = []
     
-    return total_weights
+#    element1, sets1 = create_data_set(path)
+#    total_weights.append(brute_force_not_smart(element1, sets1, verbose))
+
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency1(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency5(element1, sets1, verbose))
+	
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency6(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency7(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency8(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    total_weights.append(setcover.heuristic_frequency9(element1, sets1, verbose))
+    
+    element1, sets1 = create_data_set(path)
+    greedy_value = setcover.usual_greedy(element1, sets1, verbose)
+    total_weights.append(greedy_value)
+#    
+#    total_weights.append(greedy_value)
+#    total_weights[-2] = min(total_weights)
+    
+    names = ['heuristic_frequency_1', \
+    'heuristic_frequency_5','heuristic_frequency_6', \
+    'heuristic_frequency_7','heuristic_frequency_8', \
+    'heuristic_frequency_9', 'best', 'greedy']
+    
+    return total_weights, names
 
 def run_benchmark():
     setcover_value_matrix = np.array([])
     datasets = range(41,50) + range(51,60) + range(61,66) + [410]
     for dataset in datasets:
         path = "data_sets/scp"+str(dataset)+".txt"
-        total_weights = setcover_value(path, False)
+        total_weights, legend = setcover_value1(path, False)
         setcover_value_matrix = np.vstack((setcover_value_matrix, total_weights)) if len(setcover_value_matrix) else total_weights 
         with open("Output.txt", "w") as text_file:
             text_file.write(str(setcover_value_matrix))
         
-    df = pd.DataFrame(setcover_value_matrix)
-    df.plot(colormap = 'rainbow')
+    print_matrix(setcover_value_matrix, legend)
          
-    return setcover_value_matrix
+    return setcover_value_matrix, legend
 
 
 
-b = run_benchmark()
+b, legend = run_benchmark()
 
 #%%
 
@@ -127,19 +192,14 @@ def compare_greedy_matrix(setcover_value_matrix):
             
     return scores
     
-def print_matrix(mat):
-    names = ['heuristic_frequency_1', 'heuristic_mix_frequency', 'heuristic_frequency_3', \
-    'heuristic_frequency_4','heuristic_frequency_5','heuristic_valuation_1', \
-    'heuristic_mix_valuation', 'greedy']
 
-    df = pd.DataFrame(mat)
-    plot_matrix = df.plot(colormap = 'rainbow')
-    plot_matrix.legend(names, loc='center left', bbox_to_anchor=(1, 0.5))
+    
+
     
 #%%
     
 c = compare_greedy_matrix(b)
-print_matrix(c)
+print_matrix(c, legend)
 
 #%%
 print compare_greedy_scoring(b)
